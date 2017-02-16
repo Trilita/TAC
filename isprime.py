@@ -45,7 +45,10 @@ def check(function, until=10*1000):
     print('everything ok :)')
 
 if __name__ == '__main__':
-    check(is_prime_v1)
+    methods = [is_prime, is_prime_v1]
+    for method in methods:
+        print('checking {}'.format(method.__name__))
+        check(method)
 
     #if len(sys.argv) < 2:
     #    print('usage: python isprime.py <number>')
