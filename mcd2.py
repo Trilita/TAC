@@ -1,7 +1,7 @@
 import sys
 
 
-def euclides(number1, number2):
+def mcd2(number1, number2):
     if number1 == number2:
         return 1
     else:
@@ -21,4 +21,4 @@ if __name__ == '__main__':
         print('usage: python mcd1.py <num1> <num2>')
         sys.exit(-1)
 
-print(euclides(int(sys.argv[1]), int(sys.argv[2])))
+    print(mcd2(int(sys.argv[1]), int(sys.argv[2])))
