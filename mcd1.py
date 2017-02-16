@@ -2,8 +2,10 @@ import sys
 from collections import Counter
 
 
-# Algoritmo 1:
-#   Descomposición de los números en sus factores primos, y multiplicación de los factores comunes con el menor exponente.
+# "Algoritmo 1:
+#   Descomposición de los números en sus factores primos, y multiplicación de los factores comunes con el menor exponente."
+#
+# `number` ha de ser un número superior a 1
 def factorize(number):
     factors = []
     primes = open('primes/all_primes.txt')
