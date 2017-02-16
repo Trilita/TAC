@@ -8,9 +8,14 @@ from collections import Counter
 # `number` ha de ser un número superior a 1
 def factorize(number):
     factors = []
-    primes = open('primes/all_primes.txt')
+    primes = open('primes/all_primes_mit.txt')
     while True:
-        current_prime = int(primes.readline())
+        line = primes.readline()
+        if line == '':
+            print('prime list is not big enough for this input :(')
+            sys.exit(-1)
+
+        current_prime = int(line)
         while number % current_prime == 0:
             factors.append(current_prime)
             number /= current_prime
