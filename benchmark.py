@@ -27,7 +27,7 @@ for method in BENCHMARKS:
             elapsed_time = (datetime.datetime.now() - previous_time).total_seconds()
             partial_results.append(elapsed_time)
 
-        print('{}, {}-{}, {}, {}'.format(
+        print('{}, {}, {}, {}, {}'.format(
             method.__name__,
             prime1,
             prime2,
