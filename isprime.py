@@ -12,25 +12,20 @@ def is_prime(number):
 
     return True
 
-def check():
+# comprueba que nuestra implementación es correcta
+# usando la librería de cálculo simbólico `sympy`
+# y contrastando ambos resultados
+def check(until=100):
     import sympy
 
-    for i in range(0, 10*1000):
+    for i in range(0, until):
         if sympy.isprime(i) != is_prime(i):
             print("don't match")
             print(i)
             sys.exit(-1)
 
-def benchmark(number_list):
-    # http://stackoverflow.com/questions/1205722/how-do-i-get-monotonic-time-durations-in-python/14416514#14416514
-    file = open('is_prime.txt', 'w+')
-    for i in number_list:
-        previous_time = datetime.datetime.now()
-        is_a_prime = is_prime(i)
-        time = datetime.datetime.now() - previous_time
-        file.write("{}\t{}\t{}\n".format(i, is_a_prime, time.microseconds/1e6))
-
-
 if __name__ == '__main__':
-    is_prime(999999999989)
-    #benchmark(range(2, 10*1000))
+    if len(sys.argv) < 2:
+        print('usage: python isprime.py <number>')
+        sys.exit(-1)
+    print(is_prime(int(sys.argv[1])))
